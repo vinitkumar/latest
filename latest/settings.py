@@ -76,9 +76,17 @@ WSGI_APPLICATION = "latest.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'latest',      # The name of your PostgreSQL database
+        'USER': 'vinitkumar',      # The PostgreSQL user (defaults to your macOS username)
+        # 'PASSWORD': 'your_password', # The PostgreSQL password for the above user
+        'HOST': 'localhost',         # Set to 'localhost' for local development
+        'PORT': '5432',              # Default PostgreSQL port
+        'OPTIONS': {
+            "pool": True,           # Enable persistent connections
+            'connect_timeout': 10,   # Optional: adds a connection timeout (in seconds)
+        },
     }
 }
 

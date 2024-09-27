@@ -10,7 +10,15 @@ asgiref==3.8.1
     #   django
 django==5.1.1
     # via -r requirements.in
+psycopg[binary,pool]==3.2.2
+    # via -r requirements.in
+psycopg-binary==3.2.2
+    # via psycopg
+psycopg-pool==3.2.3
+    # via psycopg
 sqlparse==0.5.1
     # via
     #   -r requirements.in
     #   django
+typing-extensions==4.12.2
+    # via psycopg-pool
